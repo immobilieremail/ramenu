@@ -64,21 +64,21 @@ module Ramenu
 
       # get flag value
       def get_flag(name, filter_options = {})
-        before_filter(filter_options) do |controller|
+        before_action(filter_options) do |controller|
           controller.send(:get_flag, name, filter_options)
         end
       end
 
       # set flag value
       def set_flag(name, value, filter_options = {})
-        before_filter(filter_options) do |controller|
+        before_action(filter_options) do |controller|
           controller.send(:set_flag, name, value, filter_options)
         end
       end
 
       # reset flag value
       def reset_flag(name, filter_options = {})
-        before_filter(filter_options) do |controller|
+        before_action(filter_options) do |controller|
           controller.send(:reset_flag, name, filter_options)
         end
       end
@@ -97,7 +97,7 @@ module Ramenu
           end
         end
 
-        before_filter(filter_options) do |controller|
+        before_action(filter_options) do |controller|
           # if path isn't defined, use current path
           path = request.fullpath if path.nil?
 
@@ -108,7 +108,7 @@ module Ramenu
 
       # define volatile menus/flags in a block
       def definer(name = nil, filter_options = {}, &block)
-        before_filter(filter_options) do |controller|
+        before_action(filter_options) do |controller|
           controller.send(:definer, name, filter_options, &block)
         end
       end

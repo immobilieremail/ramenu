@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version = Ramenu::VERSION
 
-  gem.add_dependency 'rails', ">= 3.0"
+  gem.add_dependency 'rails', ">= 4.0.2"
   gem.add_development_dependency 'appraisal', ">= 0"
   gem.add_development_dependency 'mocha', "~> 0.9.10"
   gem.add_development_dependency 'yard', ">= 0"
